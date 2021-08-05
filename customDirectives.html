@@ -10,7 +10,9 @@
 </head>
 <body ng-app="myApp" ng-controller="myController"> 
 
-     <test></test>
+     <test-directive></test>
+     <div test></div>
+     <div class="test"></div>
     <script>
 
             var app = angular.module("myApp", []);
@@ -19,11 +21,12 @@
 
 
             });
-            app.directive("test", function(){
+            app.directive("testDirective", function(){
 
 
                 
             return{
+                //restrict: "C",
                 template : "<h1> Angular JS </h1>"
                   };
                 });

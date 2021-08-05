@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS</title>
+</head>
+<body ng-app="myApp" ng-controller="myControl">
+<input type="text" ng-keypress="firstFunction()" />
+
+<p ng-show="test">Klavyeden bir tuşa tıklandı.</p>
+<br>
+<hr>
+
+<button ng-click="changeImage()"> Fotoğrafı Değiştir !!! </button>
+</br></br>
+<div style="width: 1024px; height: 768px;" ng-style="{'background-image':goruntu}" ></div>
+
+    <script>
+        var app = angular.module("myApp",[]);
+
+        app.controller("myControl", function($scope){
+
+            $scope.firstFunction = function () {
+
+                $scope.test=true;
+
+            }; 
+            
+            $scope.goruntu = "url(image1.jpg)";
+
+            $scope.changeImage = function () {
+                $scope.goruntu = "url(image2.jpg)";
+
+            };
+
+        });
+</script>
+
+</body>
+</html>

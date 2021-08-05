@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+<button ng-dblclick="doubleClick()">Double Click</button>
+<div ng-show="test">
+    <ul>
+        <li>html</li>
+        <li>css</li>
+        <li>js</li>
+        <li>bootstrap</li>
+    </ul>   
+</div>
+
+ <script>   
+var app = angular.module("myApp", []);
+
+app.controller("myController", function($scope){
+
+    $scope.test= true;
+    $scope.doubleClick = function(){
+        $scope.test= !$scope.test;
+    
+    };
+   });
+
+
+
+</script>
+    
+</body>
+</html>

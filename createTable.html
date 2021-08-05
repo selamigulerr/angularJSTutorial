@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJs</title>
+
+    <style>
+        table, tr, th, td{
+            border:  1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+            min-width: 250px;
+            text-align: center;
+        }      .red{
+            color: red;
+        }
+        .blue{
+            color:blue;
+        }
+    </style>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+<table>
+    <thead>
+        <tr>
+            <th>Sıra No</th>
+            <th>İsim</th>
+            <th>Soyisim</th>
+            <th>Şehir</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="x in kisiler" ng-class-even="'red'" ng-class-odd="'blue'">
+            <td>{{$index+1}}</td>
+            <td ng-if="$odd" style="color:red">{{x.ad}}</td>
+            <td ng-if="$even" style="color:blue">{{x.ad}}</td>
+            <td>{{x.soyad}}</td>
+            <td>{{x.sehir}}</td>
+        </tr>
+    </tbody>
+</table>
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myController", function($scope){
+            $scope.kisiler =[
+                {
+                    "ad":"selami",
+                    "soyad":"güler",
+                    "sehir":"istanbul"
+
+                },
+                {
+                    "ad":"selçuk",
+                    "soyad":"güler",
+                    "sehir":"istanbul"
+
+                },
+                {
+                    "ad":"olcay",
+                    "soyad":"uygun",
+                    "sehir":"ankara"
+
+                },
+                {
+                    "ad":"cemil",
+                    "soyad":"uygun",
+                    "sehir":"ankara"
+
+                }
+
+            ]
+
+
+        });
+    </script>
+    
+</body>
+</html>
